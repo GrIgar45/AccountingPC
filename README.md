@@ -1,4 +1,8 @@
 # AccountingPC
-## CSN KHAI project of workstation support
+CSN KHAI project of workstation support
 
-* 5th Faculty KHAI <http://rtsla.khai.edu/home>
+## Authors
+
+[**National Aerospace University "KhAI"**](http://www.khai.edu/efc/) students:<br>
+      [*Pilipenko Ihor*](https://github.com/GrIgar45)<br>
+      [*Safaryan Vyacheslav*](https://github.com/VyacheslavDev)
