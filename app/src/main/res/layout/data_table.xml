@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:shrinkColumns="*"
+    android:stretchColumns="*">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Name"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/Name"
+            android:text="Name"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+
+    </TableRow>
+
+    <View
+        android:layout_height="3dip"
+        android:background="#000000" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="Old_Id"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/Old_Id"
+            android:text="Old_Id"
+            android:textStyle="bold"
+            android:typeface="serif" />
+    </TableRow>
+
+    <View
+        android:layout_height="3dip"
+        android:background="#000000" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="Id"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/Id"
+            android:text="Id"
+            android:textStyle="bold"
+            android:typeface="serif" />
+    </TableRow>
+
+    <View
+        android:layout_height="3dip"
+        android:background="#000000" />
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="Mac"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/Mac"
+            android:text="Mac"
+            android:textStyle="bold"
+            android:typeface="serif" />
+    </TableRow>
+
+    <View
+        android:layout_height="3dip"
+        android:background="#000000" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="Ip"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/Ip"
+            android:text="Ip"
+            android:textStyle="bold"
+            android:typeface="serif" />
+    </TableRow>
+
+    <View
+        android:layout_height="3dip"
+        android:background="#000000" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="Notes"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/Notes"
+            android:text="Notes"
+            android:textStyle="bold"
+            android:typeface="serif" />
+    </TableRow>
+
+    <View
+        android:layout_height="3dip"
+        android:background="#000000" />
+
+</TableLayout>
