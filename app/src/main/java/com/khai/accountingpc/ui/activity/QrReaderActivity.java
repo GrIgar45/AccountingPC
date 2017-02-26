@@ -86,7 +86,10 @@ public class QrReaderActivity extends Activity {
             @Override
             public void receiveDetections(Detector.Detections<Barcode> detections) {
                 SparseArray<Barcode> barcodes = detections.getDetectedItems();
-
+            /** Create one instance of Intent
+            for transfer data to MainActivity.
+            eliminates the loop.
+            */
                 if (barcodes.size() != 0) {
                     if (!isCaptured) {
                         isCaptured = true;
