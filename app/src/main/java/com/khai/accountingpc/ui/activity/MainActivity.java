@@ -10,6 +10,9 @@ import android.widget.TextView;
 import com.khai.accountingpc.R;
 import com.khai.accountingpc.ui.PCmodel;
 
+/** QR data view
+ *@author Pilipenko Ihor
+*/
 public class MainActivity extends AppCompatActivity {
 
     private Button btnQrData;
@@ -22,14 +25,18 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvIp;
     private TextView tvNotes;
 
+    /** Parse QR data and set data on form
+    */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Get data by Intent
         mScanResult = getIntent().getStringExtra("qrData");
         btnQrData = (Button) findViewById(R.id.btnScan);
 
+        // Set data
         tvName = (TextView) findViewById(R.id.Name);
         tvOldId = (TextView) findViewById(R.id.Old_Id);
         tvId = (TextView) findViewById(R.id.Id);
@@ -39,7 +46,11 @@ public class MainActivity extends AppCompatActivity {
 
         PCmodel model = new PCmodel(mScanResult);
         fillField(model);
+
+        // Set button action
         btnQrData.setOnClickListener(new View.OnClickListener() {
+            /** Scan other QR
+            */
             @Override
             public void onClick(View view) {
                 goToQrReader();
@@ -47,16 +58,24 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /** Rescan other QR
+    */
     @Override
     public void onBackPressed() {
         goToQrReader();
     }
 
+    /** Create new QrReader Activity
+    */ 
     private void goToQrReader() {
         startActivity(new Intent(MainActivity.this, QrReaderActivity.class));
+        // Complete
         finish();
     }
 
+    /** Get data from parser
+     *param model - obj with strings fields
+    */
     private void fillField(PCmodel model) {
         tvName.setText(model.getName());
         tvOldId.setText(model.getOldId());

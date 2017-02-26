@@ -17,12 +17,16 @@ import com.khai.accountingpc.ui.camera.CameraSource;
 
 import java.io.IOException;
 
+/** Camera for QR recognition Activity
+ @author Safaryan Vyacheslav
+*/
 public class QrReaderActivity extends Activity {
 
     private SurfaceView cameraView;
     private boolean isCaptured = false;
 
-
+    /** Start initialization
+    */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,16 +35,21 @@ public class QrReaderActivity extends Activity {
 
         cameraView = (SurfaceView) findViewById(R.id.camera_view);
 
+        // Default QR recognizer
         BarcodeDetector barcodeDetector =
                 new BarcodeDetector.Builder(this)
                         .setBarcodeFormats(Barcode.QR_CODE)
                         .build();
 
+        // Create camera and set properties
         final CameraSource cameraSource = new CameraSource
                 .Builder(this, barcodeDetector)
                 .setFacing(CameraSource.CAMERA_FACING_BACK)
+                // Set frame pes seconds for camera
                 .setRequestedFps(30.0f)
+                // Set focus mode
                 .setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE)
+                // Complete
                 .build();
 
 
@@ -54,6 +63,8 @@ public class QrReaderActivity extends Activity {
                 }
             }
 
+            /** throw
+            */
             @Override
             public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
             }
@@ -70,6 +81,8 @@ public class QrReaderActivity extends Activity {
 
             }
 
+            /** Recognition QR
+            */
             @Override
             public void receiveDetections(Detector.Detections<Barcode> detections) {
                 SparseArray<Barcode> barcodes = detections.getDetectedItems();
@@ -80,6 +93,7 @@ public class QrReaderActivity extends Activity {
                         Intent intent = new Intent(QrReaderActivity.this, MainActivity.class);
                         intent.putExtra("qrData", barcodes.valueAt(0).displayValue);
                         startActivity(intent);
+                        // Close activity
                         finish();
                     }
                 }
