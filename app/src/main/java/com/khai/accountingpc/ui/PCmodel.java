@@ -11,7 +11,7 @@ public class PCmodel {
     private String Ip;
     private String Notes;
 
-    /** parse string data to fields
+    /** Parse string data to fields
      * @param qrCode - string from QR
     */
     public PCmodel(String qrCode) {
