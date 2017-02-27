@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /** Get data from parser
-     *param model - obj with strings fields
+     * @param model - obj with strings fields
     */
     private void fillField(PCmodel model) {
         tvName.setText(model.getName());
